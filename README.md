@@ -7,13 +7,6 @@ https://youtube.com/shorts/Jdjq-SAkuCA?feature=share<br>
 https://youtube.com/shorts/jCoItifoNtE?feature=share<br>
 https://youtube.com/shorts/RRRcz8cecAA?feature=share<br>
 
-<br>
-
-<div></div>
-    <img src="https://cultofthepartyparrot.com/parrots/hd/githubparrot.gif" width="30" height="30"/>
-    <img src="https://cultofthepartyparrot.com/flags/hd/indiaparrot.gif" width="30" height="30"/>
-    <img src="https://cultofthepartyparrot.com/parrots/asyncparrot.gif" width="36" height="30"/>
-   ......
 </div>
 <br>
 Tool Introduction:<br>
