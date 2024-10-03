@@ -1,6 +1,3 @@
-# sql-practice
-
-Site Adress: https://tools.solverzone.com/<br>
 
 </div>
 <br>
