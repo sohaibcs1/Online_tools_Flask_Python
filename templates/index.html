@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SolverZone: Free online Tools</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+            <!-- google Analytics -->
+            {%include 'analytics.html'%}
+            <!-- google Analytics End Tag-->
+
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        {%include 'navbar.html'%}
+        <!-- Header-->
+        <header >
+            <div class="container px-lg-1 mt-2">
+                <div class="p-1 p-lg-2 rounded-3">
+                    <div class="m-1 m-lg-5">
+                        <h1 class="display-5 fw-bold">Tools that Solve your problems</h1>
+                        <p class="fs-5 text-info font-weight-bold">100% free. No limitations!</p>
+                        <!-- <a class="btn btn-info btn-lg" href="#!">Call to action</a> -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Page Content-->
+        <section class="pt-4">
+            <div class="container px-lg-5" >
+                <!-- Page Features-->
+                <div class="row gx-lg-5">
+
+                    <div class="col-lg-6 col-xxl-3 mb-5" >
+                        <a href="{{url_for('hashtag')}}" class="text-decoration-none text-dark" data-toggle="tooltip" data-placement="right" title="Click" > 
+                            <div class="card bg-light border-1 h-100">
+                                <div class="card-body text-center p-4 p-lg-3 pt-0 pt-lg-0">
+                                    <div class="feature bg-info bg-secondary text-white rounded-3 mb-4 mt-n4"> <i class="bi bi-hash"></i></div>
+                                    <h4 class="fs-4 fw-bold">Hashtag Generator</h4>
+                                    <p class="mb-0">Extract the top hashtags for Instagram, Twitter, Linkedin, YouTube and TikTok.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-6 col-xxl-3 mb-5" >
+                        <a href="{{url_for('domainLookup')}}" class="text-decoration-none text-dark" data-toggle="tooltip" data-placement="right" title="Click" > 
+                            <div class="card bg-light border-1 h-100">
+                                <div class="card-body text-center p-4 p-lg-3 pt-0 pt-lg-0">
+                                    <div class="feature bg-info bg-secondary text-white rounded-3 mb-4 mt-n4"><i class="bi bi-hdd-network-fill"></i></div>
+                                    <h4 class="fs-4 fw-bold">Domain Lookup</h4>
+                                    <p class="mb-0">look up information of a DNS, domain names, name servers, IP addresses and much More.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-6 col-xxl-3 mb-5">
+                        <a href="{{url_for('ipAddressTrackerFree')}}" class="text-decoration-none text-dark" data-toggle="tooltip" data-placement="right" title="Click" > 
+                            <div class="card bg-light border-1 h-100">
+                                <div class="card-body text-center p-4 p-lg-3 pt-0 pt-lg-0">
+                                    <div class="feature bg-info bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-geo-alt"></i></div>
+                                    <h4 class="fs-4 fw-bold">IP Tracker</h4>
+                                    <p class="mb-0">track an ip address and collect online details based on the IP number.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-6 col-xxl-3 mb-5" >
+                        <a href="{{url_for('youTubeTag')}}" class="text-decoration-none text-dark" data-toggle="tooltip" data-placement="right" title="Click" > 
+                            <div class="card bg-light border-1 h-100">
+                                <div class="card-body text-center p-4 p-lg-3 pt-0 pt-lg-0">
+                                    <div class="feature bg-info bg-secondary text-white rounded-3 mb-4 mt-n4"><i class="bi bi-tag"></i></div>
+                                    <h4 class="fs-4 fw-bold">Tag Extractor</h4>
+                                    <p class="mb-0">Extract Tags of any Youtube Video!</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-6 col-xxl-3 mb-5">
+                        <a href="{{url_for('youtubeDes')}}" class="text-decoration-none text-dark" data-toggle="tooltip" data-placement="right" title="Click" > 
+                            <div class="card bg-light border-1 h-100">
+                                <div class="card-body text-center p-4 p-lg-3 pt-0 pt-lg-0">
+                                    <div class="feature bg-info bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-blockquote-right"></i></div>
+                                    <h4 class="fs-4 fw-bold">Extract Title & Des.</h4>
+                                    <p class="mb-0">Extract title and description of youtube Video.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-xxl-3 mb-5">
+                        <a href="{{url_for('thumbnailDownloader')}}" class="text-decoration-none text-dark" data-toggle="tooltip" data-placement="right" title="Click" > 
+                            <div class="card bg-light border-1 h-100">
+                                <div class="card-body text-center p-4 p-lg-3 pt-0 pt-lg-0">
+                                    <div class="feature bg-info bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-file-earmark-slides-fill"></i></div>
+                                    <h4 class="fs-4 fw-bold">Youtube Thumbnail Downloader</h4>
+                                    <p class="mb-0">Grab any youtube video thumbnails images !</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                  
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="pt-4">
+            <div class="container px-lg-2 mb-4" >
+                <!-- Page Features-->
+                <div class="row gx-lg-5 text-center">
+                    <h5 class="alert-link text-info">Free online tools.</h5>
+                    <h3 class="display-5 fw-bold">Easy To Use</h3>
+                    <p>We've put up a collection of flexible problem-solving tools and software to help you find and resolve issues as quickly as possible.</p>
+                    <div class="card-group">
+
+                        <div class="col-lg-4 mt_40 text-center step_box ">
+                          <img src="{{url_for('static', filename='a.jpg')}}" class="img-fluid" alt="" loading="lazy" width="266" height="266">
+                          <div class="card-body">
+                            <h4 class="fs-4 fw-bold">Powerfull Server</h4>
+                            <p class="card-text">Allow our servers to perform work. The majority of the computation will be completed in under a minute. </p>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4 mt_40 text-center step_box">
+                            <img src="{{url_for('static', filename='b.jpg')}}" class="img-fluid" alt="" loading="lazy" width="266" height="266">
+                            <div class="card-body">
+                              <h4 class="fs-4 fw-bold">100% Secure</h4>
+                              <p class="card-text">We keep your Data secure! This means that no one else will be able to see the information except you. </p>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-4 mt_40 text-center step_box">
+                            <img src="{{url_for('static', filename='c.jpg')}}" class="img-fluid" alt="" loading="lazy" width="266" height="266">
+                            <div class="card-body">
+                              <h4 class="fs-4 fw-bold">Professional Tools</h4>
+                              <p class="card-text">These online Tools helps you in growing your small business.</p>
+                            </div>
+                          </div>
+
+                      </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer-->
+        
+        {%include 'footer.html'%}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- <script src="js/scripts.js"></script> -->
+        <script src="{{url_for('static',filename = 'js/scripts.js')}}"></script>
+    </body>
+
+    <style>
+        .alert {
+            margin-bottom: 5px;
+            height: 40px;
+            line-height:40px;
+            padding:0px 15px;
+          }
+
+        
+
+    </style>
+</html>

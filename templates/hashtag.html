@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>All Hashtag-for instagram, twitter & more</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+                    <!-- google Analytics -->
+                    {%include 'analytics.html'%}
+                    <!-- google Analytics End Tag-->
+        
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        {%include 'navbar.html'%}
+        <!-- Header-->
+        <header class="py-0">
+
+            <div >
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                 {% for message in messages %}
+                   <div class="alert alert-warning text-center">
+                    <strong>{{ message }}</strong>
+                  </div>
+                 {% endfor %}
+                  {% endif %}
+                {% endwith %}
+               </div>
+
+
+            <form name="form1" method="POST" action="/hashtag"> 
+             <div class="container">
+                    <div class="row">
+                        <div class="col-1"></div>
+
+                        <div class="col-10">
+                            <div class="p-4 p-lg-5 rounded-3 text-center">
+                                <div class="mb-2"> <h1>All Hashtags for Instagram, Twitter, Linkedin, YouTube and TikTok</h1><u>Extract Top and Tranding Hashtags for your post or Video.</u> </div>
+                                <input name="enterword" type="text" class="form-control" id="word" placeholder="Enter Your word...">
+                            </div>
+                            <div class="col text-center">
+                                <button class="btn btn-outline-info" type="submit" onclick="visibility()"> <i class="bi bi-box-arrow-in-down"></i> Extract Tags!</button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <div class="spinner-border" style="visibility: hidden" id="spinner"  role="status">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+               
+            </form>
+        
+            <div class="container">
+                <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10  text-center">
+                            <div>
+                                <div class="mb-2 mt-2"> <h4>Top Hashtags</h4></div>
+                                <textarea class="form-control rounded-0"  id="myInput"  rows="6" placeholder="Confirm you are human then click the 'Extract Tag!' button">{{hashtag1}}</textarea>
+                                <div class="col text-center mt-2">
+                                    <button class="btn btn-outline-info" onclick="copyText();"> <i class="bi bi-clipboard"></i> Copy Tags</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="mb-2 mt-2"> <h4> Similar Hashtags</h4></div>
+                                <textarea class="form-control rounded-0"  id="myInput2"  rows="6" placeholder="Confirm you are human then click the 'Extract Tag!' button">{{similarhashtag}}</textarea>
+                                <div class="col text-center mt-2">
+                                    <button class="btn btn-outline-info" onclick="copyText2();"> <i class="bi bi-clipboard"></i> Copy Tags</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="mb-2 mt-2"> <h4> More Hashtags</h4></div>
+                                <textarea class="form-control rounded-0"  id="myInput3"  rows="6" placeholder="Confirm you are human then click the 'Extract Tag!' button">{{morehashtag }}</textarea>
+                                <div class="col text-center mt-2">
+                                    <button class="btn btn-outline-info" onclick="copyText3();"> <i class="bi bi-clipboard"></i> Copy Tags</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                </div>
+            </div>
+
+        </header>
+
+            <!-- Page Content-->
+            <section class="pt-3">
+                <div class="container ">
+                    <!-- Page Features-->
+                    <div class="row ">
+                        <div class="col-1"></div>
+                        <div class="col-10 mt-3 ">
+                            <h2 >What is a Hashtag generator?</h2>
+                            
+                            <p>A hashtag generator is an artificial intelligence (AI)-based online tool that contains the top hashtags for Instagram, Twitter, Linkedin, YouTube and TikTok</p>
+                            
+
+                            <h2 >What source does Keyword Tool use to get hashtags?</h2>
+                            <p>Yes, because the primary goal of hashtags Generator is to get your post to the top of the search results. You may dramatically improve your social network influence by using popular hashtags.</p>
+                        
+                            <h2 >Is it possible to use a hashtag generator to boost the popularity of my post?</h2>
+                            <p>hashtags are obtained using ML API that fetch the top hashtags from the Instagram, Twitter, Linkedin, YouTube and TikTok</p>
+                        
+
+                            <h2 >What are the most popular hashtags on Instagram?</h2>
+                            <p>#love #fashion #style #beautiful #fitnes #follow #beauty #art #model #cute #repost #happy #girl #amazing #photography #lifestyle...</p>
+                        
+                            <h2 >What are the most tranding hashtags on Twiter?</h2>
+                            <p>#technology #competition #influencer #StopWar #love #fridayfeeling #MondayMotivation #art #traveltuesday #vegan #fitness...</p>
+                        
+                            <h2 >What are the most liked hashtags on Linkedin?</h2>
+                            <p>#innovation #creativity #technology #future #careers #marketing #socialmedia #socialnetworking #leanstartups #economics #branding #motivation #investing...</p>
+                        
+                            <h2 >What are the most used hashtags on YouTube?</h2>
+                            <p>#youtubegaming #youtubemusic #youtubekids #subscriber #youtubevideo  #youtubecontent #newvideo #subscribers #youtubekids #youtub #youtuber #youtubevideos...</p>
+                        
+                            <h2 >What are the popular hashtags on Tiktok?</h2>
+                            <p>#trending #viral #love #explorepage #fashion #like #foryou #viral #love #funny #memes #followme #cute #fun #music #happy #fashion #follow #comedy...</p>
+                        
+
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </section>
+
+        <script>
+
+            function isValidUrl(userInput) {
+                var res = userInput.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+                if(res == null)
+                   return false;
+                else
+                   return true;
+            }
+
+            function visibility(){
+                let urlvalue = document.getElementById("word").value;
+                let spinner = document.getElementById("spinner");
+                spinner.style.visibility = 'visible'; //'hidden'
+            }
+
+            function copyText() {
+              /* Get the text field */
+              var copyText = document.getElementById("myInput");
+            
+              /* Select the text field */
+              copyText.select();
+              copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            
+              /* Copy the text inside the text field */
+              navigator.clipboard.writeText(copyText.value);
+              
+              /* Alert the copied text */
+             // alert("Copied the text: " + copyText.value);
+            }
+            function copyText2() {
+                /* Get the text field */
+                var copyText = document.getElementById("myInput2");
+              
+                /* Select the text field */
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); /* For mobile devices */
+              
+                /* Copy the text inside the text field */
+                navigator.clipboard.writeText(copyText.value);
+                
+                /* Alert the copied text */
+               // alert("Copied the text: " + copyText.value);
+              }
+              function copyText3() {
+                /* Get the text field */
+                var copyText = document.getElementById("myInput3");
+              
+                /* Select the text field */
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); /* For mobile devices */
+              
+                /* Copy the text inside the text field */
+                navigator.clipboard.writeText(copyText.value);
+                
+                /* Alert the copied text */
+               // alert("Copied the text: " + copyText.value);
+              }
+         
+            </script>
+        <!-- Footer-->
+        {%include 'footer.html'%}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- <script src="js/scripts.js"></script> -->
+        <script src="{{url_for('static',filename = 'js/scripts.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </body>
+
+    <style>
+        .alert {
+            margin-bottom: 5px;
+            height: 40px;
+            line-height:40px;
+            padding:0px 15px;
+          }
+    </style>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Whois Lookup: Free Online Tool </title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+                    <!-- google Analytics -->
+                    {%include 'analytics.html'%}
+                    <!-- google Analytics End Tag-->
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        {%include 'navbar.html'%}
+        <!-- Header-->
+        <header class="py-0">
+            <div >
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                 {% for message in messages %}
+                   <div class="alert alert-warning text-center">
+                    <strong>{{ message }}</strong>
+                  </div>
+                 {% endfor %}
+                  {% endif %}
+                {% endwith %}
+               </div>
+               
+            <form name="form1" method="POST" action="/domainLookup"> 
+             <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="p-4 p-lg-5  rounded-3 text-center">
+                        
+                        <div class="mb-2"> <h1>Whois Lookup, Domain Name, Website, DNS Lookup</h1><u>Whois Lookup & Domain Name | Free online Tool</u> </div>
+                
+                            <div class="form-group">
+                                <input name="url" class="form-control" id="exampleFormControlInput1" placeholder="Enter URL or ip address.." >
+                            </div>
+                        </div>
+                        <div class="col text-center"><button type="submit" class="btn btn-outline-info"> <i class="bi bi-box-arrow-in-down"></i> Check Now</button></div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </form>
+        <!-- {{state}} {{ip}} {{city}} {{country}} {{gps}} {{zip}} {{isp}} -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10 mt-3">
+                        <div class="container">
+                            <div class="row">
+                            <h6>
+                        
+
+                              <ul class="list-group">
+                                <li class="list-group-item text-center">Whois Lookup :Basic Tracking Information</li>
+                                <li class="list-group-item list-group-item-success overflow-auto">whois_server:<br> {{whois_server}} </li>
+
+                                <li class="list-group-item list-group-item-secondary overflow-auto">Registrar:<br> {{domainName}}
+                                
+                               </li>
+                                <li class="list-group-item list-group-item-primary overflow-auto">name_servers:<br> 
+                                    {% for result2 in name_servers %}
+                                      <tr> {{result2}}</tr> 
+                                        <br />
+                                    {% endfor %}
+                                </li>
+
+                                <li class="list-group-item list-group-item-secondary overflow-auto">status:<br> 
+                                    {% for result3 in status %}
+                                    {{result3}} 
+                                    <br />
+                                    {% endfor %}
+                                    </li>
+                                <li class="list-group-item list-group-item-success overflow-auto">emails:<br>{{emails}}</li>
+                                <li class="list-group-item list-group-item-danger overflow-auto">dnssec:<br> {{dnssec}}</li>
+                                <li class="list-group-item list-group-item-warning overflow-auto">name:<br> {{name}}</li>
+                                <li class="list-group-item list-group-item-info overflow-auto">org:<br> {{org}} </li>
+                                <li class="list-group-item list-group-item-primary overflow-auto">address:<br> {{address}}</li>
+                                <li class="list-group-item list-group-item-danger overflow-auto">referral_url:<br> {{referral_url}}</li>
+
+                                <li class="list-group-item list-group-item-info overflow-auto">updated_date:<br> {{updated_date}} </li>
+                                <li class="list-group-item list-group-item-warning overflow-auto">creation_date:<br> {{creation_date}}</li>
+                                <li class="list-group-item list-group-item-primary overflow-auto">expiration_date:<br> {{expiration_date}}</li>
+                                <li class="list-group-item list-group-item-danger">city:<br> {{city}}</li>
+                                <li class="list-group-item list-group-item-warning">state:<br> {{state}}</li>
+                                <li class="list-group-item list-group-item-info">zipcode:<br> {{zipcode}} </li>
+                                <li class="list-group-item list-group-item-primary">country:<br> {{country}}</li>
+                              </ul>
+
+                            </h6>
+                            </div>
+                          </div>
+                        
+                    </div>
+                    
+                    <div class="col-1"></div>
+
+                </div>
+            </div>
+        
+        
+        </header>
+
+        <!-- Page Content-->
+
+           <!-- Page Content-->
+           <section class="pt-3">
+            <div class="container ">
+                <!-- Page Features-->
+                <div class="row ">
+                    <div class="col-1"></div>
+                    <div class="col-10 mt-3 overflow-auto">
+
+                        <h2>About Whois Lookup/Domain Lookup? </h2>
+                        
+                        <p>This WHOIS Lookup tool will show you who or what entity owns or controls that domain name, as well as their contact details like name, phone number, and address.</p>
+                        
+                        <h2>What is DNS?</h2>
+                        
+                        <p>The DNS, or domain name system, is a database of all internet addresses. The DNS system translates human-readable names into IP addresses, which are used to link people together.</p>
+                        <h2 >How dns look up works?</h2>
+                        
+                        <p>The DNS lookup utility retrieves all of a domain's DNS records and arranges them into a prioritised list.It can extract data for the following ccTLD & TLD( E.g 
+                            .club,.cn,.com,.game,.global,.in,.info and much more.)</p>
+
+                        <h2>Features:</h2>
+                        <ol>
+                            <li>A simple interface for accessing WHOIS data for a given domain.</li>
+                            <li>Featch the following details: 
+                                <b><ul>
+                                    <li>domainName</li>
+                                    <li>registrar</li>
+                                    <li>whois_server</li>
+                                    <li>referral_url</li>
+                                    <li>updated_date</li>
+                                    <li>expiration_date</li>
+                                    <li>creation_date</li>
+                                    <li>name_servers</li>
+                                    <li>status</li>
+                                    <li>emails</li>
+                                    <li>dnssec</li>
+                                    <li>name</li>
+                                    <li>org</li>
+                                    <li>address</li>
+                                    <li>city</li>
+                                    <li>state</li>
+                                    <li>zipcode</li>
+                                    <li>country</li>
+                                </ul></b></li>
+
+                        </ol>
+                        
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function ValidateIPaddress(inputText)
+            {
+                var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+                if(inputText.value.match(ipformat))
+                {
+                document.form1.text1.focus();
+                return true;
+                }
+                else
+                {
+                alert("You have entered an invalid IP address!");
+                document.form1.ipAddress.focus();return false;
+                }
+            }
+        </script>
+        
+        <!-- Footer-->
+        {%include 'footer.html'%}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- <script src="js/scripts.js"></script> -->
+        <script src="{{url_for('static',filename = 'js/scripts.js')}}"></script>
+    </body>
+
+    <style>
+        .alert {
+            margin-bottom: 5px;
+            height: 40px;
+            line-height:40px;
+            padding:0px 15px;
+          }
+    </style>
+         
+</html>

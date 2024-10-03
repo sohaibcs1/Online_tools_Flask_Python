@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>YouTube Thumbnail Downloader</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+                    <!-- google Analytics -->
+                    {%include 'analytics.html'%}
+                    <!-- google Analytics End Tag-->
+
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        {%include 'navbar.html'%}
+        <!-- Header-->
+        {% if name!=Null %}
+            <div class="alert alert-secondary text-center overflow-auto" role="alert">
+                <a href="{{url_for('privacyPolicy')}}" class="alert-link text-info">{{name}}!</a> Your information has been submitted successfully.
+            </div>
+            {% endif %}
+        <header class="py-5">
+
+            <div class="d-flex align-items-center justify-content-center" >
+            <form method="POST" action="/contactUs">
+                    <div class="text-center"><h3>Contact US</h3> <a>Contact to help the Team</a></div>
+                    <hr>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Full Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required >
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required >
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group mb-3">
+                    <label for="exampleInputPassword1">Your Message</label>
+                    <textarea class="form-control rounded-0 overflow-auto" name="message" id="exampleFormControlTextarea2" rows="6" placeholder="Leave a Message" required ></textarea>
+                    </div>
+                    <div class="col text-center">{{ recaptcha }}</div>
+                    <p>
+                        {% with messages = get_flashed_messages() %}
+                          {% if messages %}
+                         {% for message in messages %}
+                           <div class="alert alert-warning">
+                            <strong>{{ message }}</strong>
+                          </div>
+                         {% endfor %}
+                          {% endif %}
+                        {% endwith %}
+                       </p>
+                
+                    <div class="form-group text-center mt-3"><button type="submit" class="btn btn-info">Send</button></div>
+                
+              </form>
+            </div>
+            
+        </header>
+       
+
+        <!-- Page Content-->
+
+           <!-- Page Content-->
+          
+
+        <!-- Footer-->
+        {%include 'footer.html'%}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- <script src="js/scripts.js"></script> -->
+        <script src="{{url_for('static',filename = 'js/scripts.js')}}"></script>
+    </body>
+
+    <style>
+        .alert {
+            margin-bottom: 5px;
+            height: 40px;
+            line-height:40px;
+            padding:0px 15px;
+          }
+
+        
+
+    </style>
+         
+</html>

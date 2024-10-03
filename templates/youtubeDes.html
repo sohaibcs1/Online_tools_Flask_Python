@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Youtube Title and Description Extractor</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+                    <!-- google Analytics -->
+                    {%include 'analytics.html'%}
+                    <!-- google Analytics End Tag-->
+                    
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        {%include 'navbar.html'%}
+        <!-- Header-->
+        <header class="py-3">
+            <form method="POST" action="/youtubeDes"> 
+             <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="p-4 p-lg-5  rounded-3 text-center">
+                        
+                        <div class="mb-2"> <h1>Extract Youtube Vidoe Title and Description</h1><u> Copy/Past the URL of any Youtube Video</u> </div>
+                
+                            <div class="form-group">
+                                <input name="rawtext" type="url" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Video URL hare...">
+                            </div>
+                        </div>
+                        <div class="col text-center"><button type="submit" class="btn btn-outline-info"> <i class="bi bi-box-arrow-in-down"></i> Extract Now</button></div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </form>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10 text-center mt-3">
+                        <div class="mb-2"> <h4>Video Title and Description</h4>{{title}}</div>
+                        <textarea class="form-control rounded-0 overflow-auto" id="exampleFormControlTextarea2" rows="13" placeholder="Confirm you are human then click the 'Paraphrase Now!' button" disabled>{{Description}}</textarea>
+                    </div>
+                    <div class="col-1"></div>
+
+                </div>
+            </div>
+        
+        
+        </header>
+
+       <!-- Page Content-->
+       <section class="pt-3">
+        <div class="container ">
+            <!-- Page Features-->
+            <div class="row ">
+                <div class="col-1"></div>
+                <div class="col-10 mt-3 ">
+                    <h2 >Extract The Description and Title From a Youtube Video</h2>
+                    
+                    <p>Extract Youtube Videos Title and Description from URLs is a free online tool designed to scrape the title and description of YouTube videos. This online tool can help you in obtaining the target list of title and description.</p>
+                    <h2 >Features:</h2>
+                   
+                    <ul>
+                        <li>The capacity to work with well almost all YouTube videos</li>
+                        <li>There is no constraint for scanning YouTube urls.</li>
+                        <li>it runs much faster and collects title and description information from YouTube videos</li>
+                        <li>It's completely free, and you can scan as many YouTube videos as you want</li>
+                        <li>Unlike other scraping software or tools, this YouTube video title & description extractor does not require any additional applications or permissions.</li>
+                        <li>No need to register, login, or download any software.</li>
+                        <li>Everything come with free support.</li>
+                    </ul>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Footer-->
+        {%include 'footer.html'%}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- <script src="js/scripts.js"></script> -->
+        <script src="{{url_for('static',filename = 'js/scripts.js')}}"></script>
+    </body>
+</html>

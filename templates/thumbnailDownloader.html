@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>YouTube Thumbnail Downloader</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+                    <!-- google Analytics -->
+                    {%include 'analytics.html'%}
+                    <!-- google Analytics End Tag-->
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        {%include 'navbar.html'%}
+        <!-- Header-->
+        <header class="py-3">
+            <form method="POST" action="/thumbnailDownloader"> 
+             <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="p-4 p-lg-5  rounded-3 text-center">
+                        
+                        <div class="mb-2"> <h1>YouTube Thumbnail Downloader</h1><u> Copy/Past the URL of any Youtube Video</u> </div>
+                
+                        
+                        <input name="stext" type="url" class="form-control" id="url" placeholder="Enter Your Video URL hare...">
+                           
+                        </div>
+                        <div class="col text-center"><button type="submit" onclick="visibility()" class="btn btn-outline-info"> <i class="bi bi-box-arrow-in-down"></i> Extract Now</button></div>
+
+                        <div class="text-center mt-2">
+                            <div class="spinner-border" style="visibility: hidden" id="spinner"  role="status">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </form>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10 text-center mt-3 overflow-auto" >
+        
+                        {% if thumbNail %}
+                        <a href="{{thumbNail}}" title="ImageName">
+                        <img style="background-color: black;" src="{{thumbNail}}"  alt="Youtube_thumbnail"  >
+                        </a>
+                       {% endif %}
+                    </div>
+                    
+                    <div class="col-1"></div>
+
+                </div>
+            </div>
+        
+        
+        </header>
+
+        <!-- Page Content-->
+
+           <!-- Page Content-->
+           <section class="pt-3">
+            <div class="container ">
+                <!-- Page Features-->
+                <div class="row ">
+                    <div class="col-1"></div>
+                    <div class="col-10 mt-3">
+
+                        <h2>About Youtube Thumbnail Downloader</h2>
+                        
+                        <p>thumbnail grabber enable you to quickly download YouTube thumbnails. It's a web-based tool, not require any installation  and completely free to use.</p>
+                        
+                        <h2 >What is YouTube thumbnail?</h2>
+                        
+                        <p>The video thumbnail on YouTube is the video cover image that provides a preview of the video. YouTube thumbnails are classified into two types: those generated automatically by YouTube and those uploaded by the creator. Thumbnails uploaded by creators are referred to as custom thumbnails. Whatever type of thumbnail you have, the URL is hidden, you can't find the thumbnail link on YouTube, and you can't save it.Our tool automatically save youtube thumbnail.</p>
+
+                        <h2>How to use the YouTube thumbnail grabber?</h2>
+                       
+                        <p>Using our thumbnail downloader, you can easily grab a YouTube thumbnail.</p>
+                        <ul>
+                            <li>Enter the video URL into the input box above.</li>
+                            <li>The Youtube thumbnail downloader instantly grabs thumbnails</li>
+                            <li>Click on  download button. it will automatically Download the high quality youtube thumbnail free for you</li>
+                        </ul>
+                        <h2>Can I upload the downloaded thumbnails for my YouTube?</h2>
+                        
+                        <p>The creator or designer owns the copyright to the thumbnail. They can report and sue you if you use the content in the thumbnail without the permission of the copyright owner. As a result, I don't recommend copying other people's video thumbnails. However, it can be used as a design inspiration for your youtube video thumbnails.</p>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+
+            function isValidUrl(userInput) {
+                var res = userInput.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+                if(res == null)
+                   return false;
+                else
+                   return true;
+            }
+
+            function visibility(){
+                let urlvalue = document.getElementById("url").value;
+                if(isValidUrl(urlvalue)){
+                let spinner = document.getElementById("spinner");
+                spinner.style.visibility = 'visible'; //'hidden'
+                }
+                else{
+
+                }
+            }
+        </script>
+
+        <!-- Footer-->
+        {%include 'footer.html'%}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- <script src="js/scripts.js"></script> -->
+        <script src="{{url_for('static',filename = 'js/scripts.js')}}"></script>
+    </body>
+
+    
+         
+</html>

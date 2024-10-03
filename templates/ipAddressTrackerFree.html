@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>IP Tracker</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+                    <!-- google Analytics -->
+                    {%include 'analytics.html'%}
+                    <!-- google Analytics End Tag-->
+
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        {%include 'navbar.html'%}
+        <!-- Header-->
+        <header class="py-3">
+            <form name="form1" method="POST" action="/ipAddressTrackerFree"> 
+             <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="p-4 p-lg-5  rounded-3 text-center">
+                        
+                        <div class="mb-2"> <h1>The Best online IP Tracker </h1><u>Trace, Track, Find an IP Location with IP tracking Tool</u> </div>
+                
+                            <div class="form-group">
+                                <input name="ipAddress" class="form-control" id="exampleFormControlInput1" placeholder="Enter an IP Address.." >
+                            </div>
+                        </div>
+                        <div class="col text-center"><button type="submit" onclick="ValidateIPaddress(document.form1.ipAddress)" class="btn btn-outline-info"> <i class="bi bi-box-arrow-in-down"></i> Trace IP</button></div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </form>
+        <!-- {{state}} {{ip}} {{city}} {{country}} {{gps}} {{zip}} {{isp}} -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10 mt-3">
+                        <div class="container overflow-auto">
+                            <div class="row ">
+                            <h6>
+                            
+
+                              <ul class="list-group">
+                                <li class="list-group-item text-center">Basic Tracking Information</li>
+                              
+                                <li class="list-group-item list-group-item-primary overflow-auto"><i class="bi bi-geo-alt-fill"></i> {{ip}}</li>
+                                <li class="list-group-item list-group-item-secondary overflow-auto"><i class="bi bi-flag-fill"></i> {{state}} </li>
+                                <li class="list-group-item list-group-item-success overflow-auto"><i class="bi bi-globe2"></i> {{country}} </li>
+                                <li class="list-group-item list-group-item-danger overflow-auto"><i class="bi bi-building"></i> {{city}}</li>
+                                <li class="list-group-item list-group-item-warning overflow-auto"><i class="bi bi-geo-fill"></i> {{gps}}</li>
+                                <li class="list-group-item list-group-item-info overflow-auto"><i class="bi bi-mailbox"></i> {{zip}} </li>
+                                <li class="list-group-item list-group-item-primary overflow-auto">ISP: {{isp}}</li>
+                              </ul>
+
+                            </h6>
+                            </div>
+                          </div>
+                        
+                    </div>
+                    
+                    <div class="col-1"></div>
+
+                </div>
+            </div>
+        
+        
+        </header>
+
+        <!-- Page Content-->
+
+           <!-- Page Content-->
+           <section class="pt-3">
+            <div class="container ">
+                <!-- Page Features-->
+                <div class="row ">
+                    <div class="col-1"></div>
+                    <div class="col-10 mt-3">
+
+                        <h2>What is an IP Tracker? </h2>
+                        
+                        <p>IP Tracker is the online tool where you can learn how to discover, track, and trace an IP Address using cutting-edge tracking technologies.</p>
+                        
+                        <h2 >What Is IP Address?</h2>
+                        
+                        <p>An IP address is a numerical identification that is assigned to each device. It specifies the device's location in a network as well as a path to get there. An IP address is used by the internet to send IP packets from a source to a destination.</p>
+
+                        <h2>Can Someone Find Me With My IP Address?</h2>
+                       
+                        <p>It does not disclose your location. If someone obtains your IP address, they can discover a little bit about your internet service, such as which provider you use to connect to the internet, but they cannot locate you, your home, or your business.</p>
+                        <h2>IP address tracker software Can use for:</h2>
+                        <ul>
+                            <li>Country, Region, City.</li>
+                            <li>Longitude & Latitude: GPS </li>
+                            <li>ISP Provider</li>
+                            <li>Company and Organization Name </li>
+                            <li>Postal or ZIP code</li>
+
+                        </ul>
+                        <h2>How IP Addresses Are Tracked?</h2>
+                        
+                        <p>Based on the IP number, our IP tracker identifies and collects online information from  cookies, this tool allow you to use and process IP tracker data.  This  IP tracer tool tracks the origin of an IP address and enhances this data with information from other sources.</p>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function ValidateIPaddress(inputText)
+            {
+                var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+                if(inputText.value.match(ipformat))
+                {
+                document.form1.text1.focus();
+                return true;
+                }
+                else
+                {
+                alert("You have entered an invalid IP address!");
+                document.form1.ipAddress.focus();return false;
+                }
+            }
+        </script>
+        
+        <!-- Footer-->
+        {%include 'footer.html'%}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- <script src="js/scripts.js"></script> -->
+        <script src="{{url_for('static',filename = 'js/scripts.js')}}"></script>
+    </body>
+
+         
+</html>

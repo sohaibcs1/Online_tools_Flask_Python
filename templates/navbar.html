@@ -1,0 +1,36 @@
+       <!-- Responsive navbar-->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-lg-5">
+            <a class="navbar-brand" href="{{url_for('index')}}"> <i class="bi bi-globe"></i> SolverZone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link current" href="{{url_for('index')}}"> <i class="bi bi-house-door"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link current" href="{{url_for('ipAddressTrackerFree')}}"> <i class="bi bi-geo-alt"></i> IP Tracker</a></li>
+                    <li class="nav-item"><a class="nav-link current" href="{{url_for('domainLookup')}}"> <i class="bi bi-hdd-network-fill"></i> Domain Lookup</a></li>
+                    <li class="nav-item"><a class="nav-link current" href="{{url_for('hashtag')}}"> <i class="bi bi-hash"></i>Hashtag Generator</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="bi bi-youtube"></i> Youtube Tools</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{url_for('youTubeTag')}}"><i class="bi bi-tags"></i> Extract Tag </a></li>
+                                <li><a class="dropdown-item" href="{{url_for('thumbnailDownloader')}}"><i class="bi bi-card-image"></i> Thumbnail Downloader</a></li>
+                                <!-- <li><hr class="dropdown-divider"></li> -->
+                                <li><a class="dropdown-item " href="{{url_for('youtubeDes')}}"><i class="bi bi-file-earmark-easel"></i> Title and Description</a></li>
+                            </ul>
+                      </li>
+
+                <ul class="dropdown-menu">
+                <li><a href="#">Service A</a></li>
+                <li><a href="#">Service B</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+ 
+
+    <style>
+ .current{
+        color: aliceblue;
+        }
+    </style>
