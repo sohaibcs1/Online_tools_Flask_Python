@@ -2,11 +2,6 @@
 
 Site Adress: https://tools.solverzone.com/<br>
 
-https://youtube.com/shorts/1BH8Gd0p0XA?feature=share<br>
-https://youtube.com/shorts/Jdjq-SAkuCA?feature=share<br>
-https://youtube.com/shorts/jCoItifoNtE?feature=share<br>
-https://youtube.com/shorts/RRRcz8cecAA?feature=share<br>
-
 </div>
 <br>
 Tool Introduction<br>
